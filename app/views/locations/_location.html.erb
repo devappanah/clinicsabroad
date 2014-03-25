@@ -1,0 +1,9 @@
+<%= div_for location do %>
+  <%= location.name %>
+  <%= location.address %>
+  <%= location.lat %>
+  <%= location.lng %>
+  <div class='control-group'>
+    <%= link_to "Edit", edit_shop_location_path(@shop, location) %>
+  </div>
+<% end %>

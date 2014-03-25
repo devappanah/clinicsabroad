@@ -1,0 +1,28 @@
+<div class='row'>
+  <div class='col-md-9'> <!-- start left column -->
+    <% @shops.each do |shop| %>
+      <%= render shop %>
+    <% end %>      
+      
+  </div> <!-- end left column -->
+
+  <div class='col-md-3'> <!-- start right column -->
+    <h3>Refine your search</h3>
+        <%= render 'application/sidesearch' %>
+        <!-- <popular sectors or cuisines> -->
+        <div>
+          <h3>Popular Treatments</h3>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+        </div>
+        <!-- <Top cities> -->
+        <div>
+          <h3>Top cities</h3>
+            <p>Bangkok</p>
+            <p>Phuket</p>
+            <p>Pattaya</p>
+        </div>
+      </div>
+  </div> <!-- end right column -->
+<div>

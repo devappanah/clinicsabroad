@@ -1,0 +1,9 @@
+<%= div_for staff do %>
+  <%= staff.name %>
+  <%= staff.education %>
+  <%= staff.skills %>
+  <%= staff.avatar %>
+  <div class='control-group'>
+    <%= link_to "Edit", edit_shop_staff_path(@shop, staff) %>
+  </div>
+<% end %>

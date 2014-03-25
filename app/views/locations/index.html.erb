@@ -1,0 +1,11 @@
+<h3>
+  Please fill up your locations for <%= @shop.name %>
+  <small><%= link_to "Add New Location", new_shop_location_path %></small>
+</h3>
+<% if @locations.present? %>
+<% @locations.each do |location| %>
+  <%= render location %>
+<% end %>
+<% else %>
+  <%= render 'none' %>
+<% end %>

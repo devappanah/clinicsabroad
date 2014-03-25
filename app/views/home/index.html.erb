@@ -1,0 +1,71 @@
+<div class='jumbotron' style='background: transparent url(<%= asset_url('home_background.jpg') %>) no-repeat'>
+  <div class='container'>
+    <div class='row' id='search_bar'>
+
+      <div class'col-md-6'>
+        <h3>Find a clinic & make an appointment</h3>
+        <%= render 'application/search' %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class='jumbotron'>
+  <%#= image_tag 'home_background.jpg', alt: 'background!', class: 'img-thumbnail' %>
+  <div class='container'>
+    <div class='col-md-6 col-md-offset-3'>
+      <h4>Find a clinic</h4>
+        <%#= render 'application/search' %>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class='row'>
+  <div>
+    <%#= image_tag 'home_background.jpg', alt: 'background!', class: 'img-thumbnail' %>
+    <div class='col-md-6 col-md-offset-3'>
+      <h4>Find a clinic</h4>
+        <%#= render 'application/search' %>
+    </div>
+  </div>
+</div> -->
+<div class='container'>
+<div class='row'>
+  <div class='col-md-6'>
+    <div>
+      <h4>Submit your clinic</h4>
+      <%= link_to new_clinic_request_path do %>
+        <%= image_tag 'clinicrequest_holder.png', alt: 'featured!', class: 'img-thumbnail' %>
+        <% end %>
+    </div>  
+  </div>
+  <div class='col-md-6'>
+    <div class='col-md-4'>
+      <h4>Popular Categories</h4>
+      <ul>
+        <% Category.all.each do |category| %>
+          <li><%= link_to category.name, shops_path + "?category_id=#{category.id}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class='col-md-4'>
+      <h4>Popular Procedures</h4>
+      <ul>
+        <% Service.distinct_by_name.each do |service| %>
+          <li><%= link_to service, shops_path + "?service=#{service}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class='col-md-4'>
+      <h4>Popular Locations</h4>
+      <ul>
+        <% Location.distinct_cities.each do |location| %>
+          <li><%= link_to location, shops_path + "?city=#{location}"  %></li>
+        <% end %>
+      </ul>    
+    </div>
+  </div>
+</div>
+</div>
+

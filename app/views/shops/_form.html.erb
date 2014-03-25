@@ -1,0 +1,58 @@
+<%= form_for @shop do |f| %>
+  <%= render 'basic', f: f %>
+  <div>
+    <h3>Clinic Details</h3>
+    <div class='form-group'>
+    <%= f.label :description, "About Us" %>
+      <div>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div>
+    <%= f.label :highlights, "Highlights" %>
+      <div>
+        <%= f.text_area :highlights, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :hours_operation, "Hours of Operation" %>
+      <div>
+        <%= f.text_area :hours_operation, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :payment_methods, "Accepted Payment Methods" %>
+      <div>
+        <%= f.text_area :payment_methods, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :insurance_terms, "Accepted Insurance Terms" %>
+      <div>
+        <%= f.text_area :insurance_terms, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :certifications, "Certifications" %>
+      <div>
+        <%= f.text_area :certifications, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :additional_services, "Additional Services" %>
+      <div>
+        <%= f.text_area :additional_services, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.label :years_business, "Years in Business" %>
+      <div>
+        <%= f.text_area :years_business, class: 'form-control' %>
+      </div>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+

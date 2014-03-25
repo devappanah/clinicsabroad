@@ -1,0 +1,11 @@
+<h3>
+  Please fill up your staff info for <%= @shop.name %>
+  <small><%= link_to "Add New Staff", new_shop_staff_path %></small>
+</h3>
+<% if @staffs.present? %>
+  <% @staffs.each do |staff| %>
+    <%= render staff %>
+  <% end %>
+<% else %>
+  <%= render 'none' %>
+<% end %>

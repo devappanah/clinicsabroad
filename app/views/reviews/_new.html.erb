@@ -1,0 +1,14 @@
+<%= form_for [@shop, @shop.reviews.build] do |f| %>
+  <div class='form-group'>
+    <div><%= f.label :score %></div>
+    <div><span id='cast-score'></span></div>
+    <%= f.hidden_field :score, class: 'form-control' %>
+    <div><%= f.label :title %></div>
+    <div><%= f.text_field :title, class: 'form-control' %></div>
+    <div><%= f.label :body %></div>
+    <div><%= f.text_area :body, class: 'form-control' %></div>
+  </div>
+  <div class='form-group'>
+    <%= f.submit "Submit Review", class: 'btn btn-success' %>
+  </div>
+<% end %>

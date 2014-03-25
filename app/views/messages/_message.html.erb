@@ -1,0 +1,31 @@
+<%= form_for @message do |f| %>
+<% unless current_user.name.present? %>
+<div class='form-group'>
+  <%= f.label :name, "Name" %>
+  <div>
+    <%= f.text_area :name, class: 'form-control' %>
+  </div>
+</div>
+<% end %>
+<% unless current_user.phone.present? %>
+<div class='form-group'>
+  <%= f.label :phone, "Phone" %>
+  <div>
+    <%= f.text_area :phone, class: 'form-control' %>
+  </div>
+</div>
+<% end %>
+
+<div>
+  <%= f.label :body, "Message" %>
+    <div>
+      <%= f.text_area :Message, class: 'form-control' %>
+    </div>
+</div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

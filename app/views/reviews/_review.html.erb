@@ -1,0 +1,6 @@
+<%= div_for review do %>
+  <%= review.user.name %>
+  <span class='review' data-score='<%= review.score %>'></span>
+  <%= review.title %>
+  <%= review.body %>
+<% end %>

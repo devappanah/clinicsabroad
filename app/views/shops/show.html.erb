@@ -1,0 +1,185 @@
+<div class='row'>
+  <%= div_for @shop, class: 'col-md-9' do %><!-- start left column -->
+    <h2><%= @shop.name %><small>Review: <span class='review' data-score='<%= @shop.average_score %>'></span><span>(<%= @shop.reviews.count %>)</span></small></h2>
+
+    <div class='row'> <!-- start first row -->
+      <div class='col-md-8'>
+        <div>
+          <%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %>
+        </div>
+      </div>
+
+      <div class='col-md-4'>
+        <div class='action-buttons'>
+          <div>
+            <button type="button" class="btn btn-success btn-block">Appointment</button>
+          </div>
+          <div>
+            <%= link_to "Contact Clinic", "#lead_collection", class: 'btn btn-block btn-warning' %>
+          </div>
+          <div>
+            <button type="button" class="btn btn-info btn-block">Personalized Quote</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- end first row -->
+    
+      <div class='row'>
+        <div class='col-md-8'>
+          <h4>Highlights</h4>
+            <p><%= simple_format @shop.highlights %></p>
+
+          <h4>About the Clinic</h4>
+            <p><%= simple_format @shop.description %></p>
+
+          <h4>Additional Services</h4>
+            <p><%= simple_format @shop.additional_services %></p>
+
+          <div id='reviews'>
+            <h4>Reviews</h4>
+            <%= render @shop.reviews %>
+            <h4>Write a review</h4>
+            <%= render 'reviews/new' %>
+          </div>
+
+        </div> 
+
+        <div class='col-md-4'>
+          <div>
+            <h4>Location</h4>
+            <%= image_tag 'map_holder.jpg', alt: 'map!', class: 'img-thumbnail' %>
+          </div>
+            <h4>Hours of Operation</h4>
+              <p><%= simple_format @shop.hours_operation %></p>
+
+            <h4>Payment Methods</h4>
+              <p><%= simple_format @shop.payment_methods %></p>
+
+            <h4>Insurance Terms</h4>
+              <p><%= simple_format @shop.insurance_terms %></p>
+
+            <h4>Certifications</h4>
+              <p><%= simple_format @shop.certifications %></p>
+
+            <h4>Years In Business</h4>
+              <p><%= simple_format @shop.years_business %></p>
+        </div>
+      </div>
+
+    <div>
+      <h4>Services</h4>
+      <div class='table-responsive'>
+        <table class='table'>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Duration</th>
+          </tr>
+          <% @shop.services.each do |service| %>
+          <tr>
+            <td><%= service.name %></td>
+            <td><%= service.description %></td>
+            <td><%= service.price %></td>
+            <td><%= service.duration %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h4>Photos of this clinic</h4>
+      <div class='table-responsive'>
+        <table class='table'>
+          <tr>
+          <% @shop.photos.each_with_index do |photo,index| %>
+          <% if index > 0 && index % 3 == 0 then %>
+              </tr><tr>
+          <% end %>
+            <td><%= image_tag photo.name, :width => 200 %></td>
+          <% end %>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h4>Specialists</h4>
+      <div class='table-responsive'>
+        <table class='table'>
+          <% @shop.staffs.each do |staff| %>
+          <tr>
+            <th><%= staff.name %></th>
+            <th>Education</th>
+            <th>Skills</th>
+          </tr>
+          <tr>
+            <td><%= image_tag staff.avatar.url, :width => 100 %></td>
+            <td><%= staff.education %></td>
+            <td><%= staff.skills %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <h4>Promotions</h4>
+      <div class='table-responsive'>
+        <table class='table'>
+          <% @shop.promotions.each do |promotion| %>
+          <tr>
+            <th><%= promotion.title %></th>
+            <th>Description</th>
+            <th>Expiry Date</th>
+          </tr>
+          <tr>
+            <td><%#= image_tag promotion.avatar.url, :width => 150 %></td>
+            <td><%= promotion.description %></td>
+            <td><%= promotion.exp_date %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
+  <div id='lead_collection'>
+    <%= render_lead_collector %>
+  </div>
+
+  <% end %><!-- end left column -->
+
+  <div class='col-md-3'> <!-- start right column -->
+    <h3>Search again</h3>
+        
+        <%= render 'application/sidesearch' %>
+        
+        <!-- <popular sectors or cuisines> -->
+        <div>
+          <h3>Popular Treatments</h3>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+        </div>
+        <!-- <Top cities> -->
+        <div>
+          <h3>Top cities</h3>
+            <p>Bangkok</p>
+            <p>Phuket</p>
+            <p>Pattaya</p>
+        </div>
+      </div>
+  </div> <!-- end right column -->
+
+<span>
+  <%= link_to "Edit: #{@shop.name}", edit_shop_path(@shop) %>
+</span>
+
+<span>
+  <%= link_to "Delete", shop_path(@shop), method: :delete, data: { confirm: "Are you sure?"} %>
+</span>
+
+<span>
+  <%= link_to "Back to All Shops", shops_path %>
+</span>

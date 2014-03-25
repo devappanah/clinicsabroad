@@ -1,0 +1,101 @@
+<div class='row'>
+  <div class='col-md-9'> <!-- start left column -->
+    <div class='row'>
+      <div class='col-md-9'>
+        <h2><%= @shop.name %></h2>
+        <%= image_tag 'ratings_holder.jpg', alt: 'ratings!', class: 'img-thumbnail' %> 213 reviews
+      </div>
+      <div class='col-md-3'>
+        <button type="button" class="btn btn-success btn-lg btn-block">Appointment</button>
+        <button type="button" class="btn btn-warning btn-lg btn-block">Contact</button>
+      </div>
+    </div>
+      <div>
+        <%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %>
+      </div>
+      <div>
+        <%= image_tag 'map_holder.jpg', alt: 'map!', class: 'img-thumbnail' %>
+        <% @shop.locations.each do |location| %>
+          <span><%= location.address %></span>
+        <% end %>
+      </div>
+      <div>
+        <%= image_tag 'cert_holder.jpg', alt: 'certificate!', class: 'img-thumbnail' %>Cert name 
+        <%= image_tag 'cert_holder.jpg', alt: 'certificate!', class: 'img-thumbnail' %>Verified
+      </div>
+      <div class='row'>
+        <div class='col-md-6'>
+          <h4>Highlights</h4>
+          <p><%= simple_format @shop.highlights %></p>
+        </div>
+        <div class='col-md-6'>
+          <h4>Hours of Operation</h4>
+          <p><%= simple_format @shop.hours_operation %></p>
+        </div>
+      </div>
+      <h4>About the Clinic</h4>
+      <p><%= simple_format @shop.description %></p>
+
+      <h4>Payment Methods</h4>
+      <p><%= simple_format @shop.payment_methods %></p>
+
+      <h4>Insurance Terms</h4>
+      <p><%= simple_format @shop.insurance_terms %></p>
+
+      <h4>Certifications</h4>
+      <p><%= simple_format @shop.certifications %></p>
+
+      <h4>Additional Services</h4>
+      <p><%= simple_format @shop.additional_services %></p>
+
+      <h4>Years In Business</h4>
+      <p><%= simple_format @shop.years_business %></p>
+  </div>
+
+  <div class='col-md-3'> <!-- start right column -->
+    <h2>Find a Clinic</h2>
+        <div>
+          <h3>Treatment</h3>
+            <input type="text" class="form-control" placeholder="Crown, Implants, Dentures">
+          <h3>Location</h3>
+            <input type="text" class="form-control" placeholder="Mexico, Costa Rica, Bangkok">
+        </div>
+        <div id='advanced'>
+          <a href='#'>Advanced Search</a>
+            <div id='advanced-fields'>
+              <h3>Clinic</h3>
+                <input type="text" class="form-control" placeholder="Search by name">
+              <h3>Doctor</h3>
+                <input type="text" class="form-control" placeholder="Find a Doctor">
+            </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-success">Search Now</button>
+        </div>
+        <!-- <popular sectors or cuisines> -->
+        <div>
+          <h2>Popular Treatments</h2>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+            <p>Malaysia</p>
+        </div>
+        <!-- <Top cities> -->
+        <div>
+          <h2>Top cities</h2>
+            <p>Bangkok</p>
+            <p>Phuket</p>
+            <p>Pattaya</p>
+        </div>
+  </div>
+
+<span>
+  <%= link_to "Edit: #{@shop.name}", edit_shop_path(@shop) %>
+</span>
+
+<span>
+  <%= link_to "Delete", shop_path(@shop), method: :delete, data: { confirm: "Are you sure?"} %>
+</span>
+
+<span>
+  <%= link_to "Back to All Shops", shops_path %>
+</span>

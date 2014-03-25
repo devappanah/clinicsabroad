@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  service_id: 
+  body: 
+  scheduled_at: 2014-03-06 19:37:26
+  type: 
+
+two:
+  user_id: 
+  service_id: 
+  body: 
+  scheduled_at: 2014-03-06 19:37:26
+  type: 

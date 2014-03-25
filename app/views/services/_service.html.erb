@@ -1,0 +1,9 @@
+<%= div_for service do %>
+  <%= service.name %>
+  <%= service.description %>
+  <%= service.price %>
+  <%= service.duration %>
+  <div class='control-group'>
+    <%= link_to "Edit", edit_shop_service_path(@shop, service) %>
+  </div>
+<% end %>

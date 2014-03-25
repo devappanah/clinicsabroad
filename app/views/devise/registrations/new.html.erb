@@ -1,0 +1,23 @@
+<h2>Sign up</h2>
+<div class='form-group'>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :name %></div>
+  <div><%= f.text_field :name, class: 'form-control' %></div>
+
+  <div><%= f.label :email %></div>
+  <div><%= f.email_field :email, :autofocus => true, class: 'form-control' %></div>
+
+  <div><%= f.label :password %></div>
+  <div><%= f.password_field :password, class: 'form-control' %></div>
+
+  <div><%= f.label :password_confirmation %></div>
+  <div><%= f.password_field :password_confirmation, class: 'form-control' %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>

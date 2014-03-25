@@ -1,0 +1,10 @@
+<%= form_for [@shop, @shop.messages.build] do |f|%>
+  <div class='form-group'>
+
+    <div><%= f.label :phone, "Phone" %></div>
+    <div><%= f.text_field :phone, class: 'form-control' %></div>
+    <div><%= f.label :body, "Message" %></div>
+    <div><%= f.text_area :body, class: 'form-control' %></div>
+    <div><%= f.submit "Send" , class: 'btn-success btn' %></div>
+  </div>
+<% end %>

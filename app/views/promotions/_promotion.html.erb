@@ -1,0 +1,9 @@
+<%= div_for promotion do %>
+  <%= promotion.title %>
+  <%= promotion.description %>
+  <%= promotion.exp_date %>
+  <%= promotion.avatar %>
+  <div class='control-group'>
+    <%= link_to "Edit", edit_shop_promotion_path(@shop, promotion) %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<h3>
+  Please fill up your promotion info for <%= @shop.name %>
+  <small><%= link_to "Add New Promotion", new_shop_promotion_path %></small>
+</h3>
+<% if @promotions.present? %>
+  <% @promotions.each do |promotion| %>
+    <%= render promotion %>
+  <% end %>
+<% else %>
+  <%= render 'none' %>
+<% end %>

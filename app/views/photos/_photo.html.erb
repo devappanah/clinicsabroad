@@ -1,0 +1,12 @@
+<%= div_for photo do %>
+  <div class='row'>
+    <div class='col-md-4'>
+      <%= image_tag photo.name.url, class: 'img-responsive' %>
+    </div>
+    <div class='col-md-8'>
+      <div class='control-group'>
+        <%= link_to "Edit", edit_shop_photo_path(@shop, photo), class: 'btn btn-default' %>
+      </div>  
+    </div>
+  </div>
+<% end %>

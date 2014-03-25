@@ -1,0 +1,11 @@
+<h3>
+  Please fill up your photos for <%= @shop.name %>
+  <small><%= link_to "Add New Photo", new_shop_photo_path %></small>
+</h3>
+<% if @photos.present? %>
+<% @photos.each do |photo| %>
+  <%= render photo %>
+<% end %>
+<% else %>
+  <%= render 'none' %>
+<% end %>

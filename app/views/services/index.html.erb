@@ -1,0 +1,11 @@
+<h3>
+  Please fill up your services for <%= @shop.name %>
+  <small><%= link_to "Add New Service", new_shop_service_path %></small>
+</h3>
+<% if @services.present? %>
+<% @services.each do |service| %>
+  <%= render service %>
+<% end %>
+<% else %>
+  <%= render 'none' %>
+<% end %>

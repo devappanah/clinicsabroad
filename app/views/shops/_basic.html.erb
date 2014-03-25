@@ -1,0 +1,29 @@
+<h3>Basic Info</h3>
+<div class='form-group'>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
+
+<!-- <h3>Locations</h3>
+<div class='form-group'>
+  <%= f.fields_for :locations do |l| %>
+    <div><%#= l.label :lat %></div>
+    <div><%#= l.number_field :lat, class: 'form-control' %></div>
+    <div><%#= l.label :lng %></div>
+    <div><%#= l.number_field :lng, class: 'form-control' %></div>
+    <div><%#= l.label :address %></div>
+    <div><%#= l.text_area :address, class: 'form-control' %></div>
+  <% end %>
+</div> -->
+
+<h3>Categories/Specialties</h3>
+<div class='form-group'>
+  <div class='row'>
+    <% for category in Category.all %>
+    <div class='col-md-3'>
+      <%= check_box_tag "shop[category_ids][]", category.id, @shop.categories.include?(category) %>
+      <%= category.name %>
+    </div>
+    <% end %>
+  </div>
+</div>
