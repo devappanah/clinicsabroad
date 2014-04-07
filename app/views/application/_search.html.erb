@@ -1,6 +1,6 @@
 <%= form_tag shops_path, method: :get, class: 'row' do %>
 <div class='col-md-3'>
-  <h4>Category</h4>
+  <h4>Specialty</h4>
   <%= select_tag :category_id, options_for_select(Category.all.collect { |c| [c.name, c.id]}), prompt: "", class: 'form-control' %>
 </div>
 <div class='col-md-3'>
