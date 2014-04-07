@@ -25,6 +25,7 @@ gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'carrierwave'
+gem 'fog'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
