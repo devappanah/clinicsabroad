@@ -19,6 +19,23 @@ ActiveAdmin.register Shop do
     default_actions
   end
 
+  show do |shop|
+    attributes_table do 
+      row :name
+      row :description
+      row :user
+      row :payment_methods
+    end
+
+    panel "Staffs" do 
+      table_for(shop.staffs) do 
+        column :name
+      end
+    end
+
+    
+
+  end
   
   
 end

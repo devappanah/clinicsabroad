@@ -5,3 +5,4 @@
 #= require base
 #= require shops
 #= require location_map
+#= require chosen.jquery

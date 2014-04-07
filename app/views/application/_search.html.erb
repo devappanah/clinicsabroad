@@ -1,15 +1,15 @@
 <%= form_tag shops_path, method: :get, class: 'row' do %>
 <div class='col-md-3'>
   <h4>Specialty</h4>
-  <%= select_tag :category_id, options_for_select(Category.all.collect { |c| [c.name, c.id]}), prompt: "", class: 'form-control' %>
+  <%= select_tag :category_id, options_for_select(Category.all.collect { |c| [c.name, c.id]}), prompt: "", class: 'form-control chosen-select' %>
 </div>
 <div class='col-md-3'>
   <h4>Procedure</h4>
-  <%= select_tag :service, options_for_select(Service.distinct_by_name), prompt: "", class: 'form-control' %>
+  <%= select_tag :service, options_for_select(Service.distinct_by_name), prompt: "", class: 'form-control chosen-select' %>
 </div>
 <div class='col-md-3'>
   <h4>Location</h4>
-  <%= select_tag :city, options_for_select(Location.distinct_cities), prompt: "", class: 'form-control' %>
+  <%= select_tag :city, options_for_select(Location.distinct_cities), prompt: "", class: 'form-control chosen-select' %>
 </div>
 <div class='col-md-3'>
   <%= submit_tag "Search Now", class: 'btn btn-success btn-block', id: 'search_button' %>
