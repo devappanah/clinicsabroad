@@ -11,38 +11,17 @@
   </div>
 </div>
 
-<!-- <div class='jumbotron'>
-  <%#= image_tag 'home_background.jpg', alt: 'background!', class: 'img-thumbnail' %>
-  <div class='container'>
-    <div class='col-md-6 col-md-offset-3'>
-      <h4>Find a clinic</h4>
-        <%#= render 'application/search' %>
-    </div>
-  </div>
-</div> -->
-
-<!-- <div class='row'>
-  <div>
-    <%#= image_tag 'home_background.jpg', alt: 'background!', class: 'img-thumbnail' %>
-    <div class='col-md-6 col-md-offset-3'>
-      <h4>Find a clinic</h4>
-        <%#= render 'application/search' %>
-    </div>
-  </div>
-</div> -->
 <div class='container'>
-<div class='row'>
-  <div class='col-md-3'>
-    <div>
-      <h4>Submit your clinic</h4>
-      <p>Are you a top dentist or specialist? Get listed on Clinicsabroad.com now</p>
-      <%= link_to new_clinic_request_path do %>
-        <button type="button" class="btn btn-success">Submit now</button>
-        <!-- <%#= image_tag 'clinicrequest_holder.png', alt: 'featured!', class: 'img-thumbnail' %> -->
-        <% end %>
-    </div>  
-  </div>
-  <!-- <div class='col-md-6'> -->
+  <div class='row'>
+    <div class='col-md-3'>
+        <h4>Submit your clinic</h4>
+        <p>Are you a top dentist or specialist? Get listed on Clinicsabroad.com now</p>
+        <%= link_to new_clinic_request_path do %>
+          <button type="button" class="btn btn-success">Submit now</button>
+          <!-- <%#= image_tag 'clinicrequest_holder.png', alt: 'featured!', class: 'img-thumbnail' %> -->
+          <% end %>
+    </div>
+
     <div class='col-md-3'>
       <h4>Popular Specialties</h4>
       <ul>
@@ -51,6 +30,7 @@
         <% end %>
       </ul>
     </div>
+
     <div class='col-md-3'>
       <h4>Popular Procedures</h4>
       <ul>
@@ -59,6 +39,7 @@
         <% end %>
       </ul>
     </div>
+
     <div class='col-md-3'>
       <h4>Popular Locations</h4>
       <ul>
@@ -67,7 +48,7 @@
         <% end %>
       </ul>    
     </div>
-  <!-- </div> -->
+
 </div>
 </div>
 
