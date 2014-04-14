@@ -16,6 +16,8 @@ Medglobal::Application.routes.draw do
   end
 
   get "/about", to: 'pages#show', id: 'about_us'
+  get "/terms", to: 'pages#show', id: 'terms'
+  get "/privacy", to: 'pages#show', id: 'privacy'
 
   root to: "home#index"
 end
