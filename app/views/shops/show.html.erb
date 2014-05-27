@@ -144,33 +144,22 @@
       </div>
     </div>
 
-  <div id='lead_collection'>
-    <%= render_lead_collector %>
-  </div>
-
   <% end %><!-- end left column -->
 
   <div class='col-md-3'> <!-- start right column -->
-    <h3>Search again</h3>
-        
+    <div id='lead_collection'>
+      <%= render_lead_collector %>
+    </div>
+
+    <div>
+      <h3>Search again</h3>
         <%= render 'application/sidesearch' %>
-        
-        <!-- <popular sectors or cuisines> -->
-        <div>
-          <h3>Popular Treatments</h3>
-            <p>Malaysia</p>
-            <p>Malaysia</p>
-            <p>Malaysia</p>
-        </div>
-        <!-- <Top cities> -->
-        <div>
-          <h3>Top cities</h3>
-            <p>Bangkok</p>
-            <p>Phuket</p>
-            <p>Pattaya</p>
-        </div>
-      </div>
+    </div>
+    
   </div> <!-- end right column -->
+
+</div>
+
 
 <!-- <span>
   <#%= link_to "Edit: #{@shop.name}", edit_shop_path(@shop) %>
@@ -181,5 +170,5 @@
 </span>
 
 <span>
-  <#%= link_to "Back to All Shops", shops_path %>
+  <#,%= link_to "Back to All Shops", shops_path %>
 </span> -->
