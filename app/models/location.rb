@@ -3,6 +3,7 @@ class Location < ActiveRecord::Base
 
   # validates :name, presence: true
   validates :address, presence: true
+  validates :tel, presence: true
 
   def self.by_city(city_name)
     where("city = ?", city_name)

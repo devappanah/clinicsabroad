@@ -1,6 +1,13 @@
 <div class='row'>
   <%= div_for @shop, class: 'col-md-9' do %><!-- start left column -->
-    <h2><%= @shop.name %><small>Reviews: <span class='review' data-score='<%= @shop.average_score %>'></span><span>(<%= @shop.reviews.count %>)</span></small></h2>
+    <h2><%= @shop.name %></h2>
+    <p>
+      Reviews: <span class='review' data-score='<%= @shop.average_score %>'></span><span>(<%= @shop.reviews.count %>)</span>
+    </p>
+    <p>
+      Address:  <%=@shop.locations.first.address %>
+      Tel:  <%=@shop.locations.first.tel %>
+    </p>
 
     <div class='row'> <!-- start first row -->
       <div class='col-md-8'>
@@ -9,19 +16,6 @@
         </div>
       </div>
 
-      <div class='col-md-4'>
-        <div class='action-buttons'>
-          <div>
-            <button type="button" class="btn btn-success btn-block">Appointment</button>
-          </div>
-          <div>
-            <%= link_to "Contact Clinic", "#lead_collection", class: 'btn btn-block btn-warning' %>
-          </div>
-          <div>
-            <button type="button" class="btn btn-info btn-block">Personalized Quote</button>
-          </div>
-        </div>
-      </div>
     </div><!-- end first row -->
 
   <div class='row'>
@@ -48,13 +42,18 @@
 
               <h4>Additional Services</h4>
                 <p><%= simple_format @shop.additional_services %></p>
+              <div>
+                <h4>Location</h4>
+                
+                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=11&size=600x300&sensor=false", alt: 'map!', class: 'img-thumbnail' %>
+              </div>
             </div> 
 
             <div class='col-md-4'>
-              <div>
+              <!-- <div>
                 <h4>Location</h4>
-                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=11&size=200x200&sensor=false", alt: 'map!', class: 'img-thumbnail' %>
-              </div>
+                <#%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=11&size=200x200&sensor=false", alt: 'map!', class: 'img-thumbnail' %>
+              </div> -->
                 <h4>Hours of Operation</h4>
                   <p><%= simple_format @shop.hours_operation %></p>
 
