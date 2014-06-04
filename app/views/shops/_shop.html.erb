@@ -1,12 +1,27 @@
 <%= div_for shop do %>
-  <h3><%= link_to shop.name, shop_path(shop) %> <small>Review: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span></small></h3>
   <div class='row'>
     <div class='col-md-3'>
       <p><%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %></p>
     </div>
     <div class='col-md-6'>
-      <p><%= shop.highlights %></p>
-      <table class='table'>
+      <div>
+        <h3><%= link_to shop.name, shop_path(shop) %></h3>
+      </div>
+      <div>
+        <small>Reviews: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span></small>
+      </div>
+      <div class='row'>
+        <% shop.locations.pluck(:city, :address).uniq.each do |location| %>
+        <div class='col-md-3'>
+          <%= location[0] %>
+        </div>
+        <div class='col-md-9'>
+          <%= location[1] %>
+        </div>
+        <% end %>
+      </div>
+      <!-- <p><#%= shop.highlights %></p> -->
+      <!-- <table class='table'>
         <thead>
           <tr>
             <th>City</th>
@@ -14,18 +29,18 @@
           </tr>
         </thead>
         <tbody>
-        <% shop.locations.pluck(:city, :address).uniq.each do |location| %>
+        <#% shop.locations.pluck(:city, :address).uniq.each do |location| %>
           <tr>
-            <td><%= location[0] %></td>
-            <td><%= location[1] %></td>
+            <td><#%= location[0] %></td>
+            <td><#%= location[1] %></td>
           </tr>
-        <% end %>
+        <#% end %>
         </tbody>
-      </table>
+      </table> -->
     </div>
     <div class='col-md-3'>
       <%= link_to "Select Clinic", shop_path(shop), class: "btn btn-primary btn-block" %>
-      <%= link_to "Show on Map", shop_path(shop), class: "btn btn-primary btn-block" %>
+      <!-- <#%= link_to "Show on Map", shop_path(shop), class: "btn btn-primary btn-block" %> -->
     </div>
   </div>
 <% end %>     
