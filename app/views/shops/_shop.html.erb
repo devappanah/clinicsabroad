@@ -1,14 +1,18 @@
 <%= div_for shop do %>
   <div class='row'>
     <div class='col-md-3'>
-      <p><%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %></p>
+      <p>
+        <%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %>
+      </p>
     </div>
     <div class='col-md-6'>
       <div>
         <h3><%= link_to shop.name, shop_path(shop) %></h3>
       </div>
       <div>
-        <small>Reviews: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span></small>
+        
+          Reviews: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span>
+        
       </div>
       <div class='row'>
         <% shop.locations.pluck(:city, :address).uniq.each do |location| %>
@@ -39,7 +43,9 @@
       </table> -->
     </div>
     <div class='col-md-3'>
-      <%= link_to "Select Clinic", shop_path(shop), class: "btn btn-primary btn-block" %>
+      <div>
+        <%= link_to "Select Clinic", shop_path(shop), class: "btn btn-primary btn-block" %>
+      </div>
       <!-- <#%= link_to "Show on Map", shop_path(shop), class: "btn btn-primary btn-block" %> -->
     </div>
   </div>
