@@ -18,12 +18,15 @@
 
 <h3>Categories/Specialties</h3>
 <div class='form-group'>
-  <div class='row'>
     <% for category in Category.all %>
-    <div class='col-md-3'>
-      <%= check_box_tag "shop[category_ids][]", category.id, @shop.categories.include?(category) %>
-      <%= category.name %>
-    </div>
+      <div>
+        <%= check_box_tag "shop[category_ids][]", category.id, @shop.categories.include?(category) %>
+        <%= category.name %>
+      </div>
     <% end %>
-  </div>
 </div>
+  
+
+    
+
+
