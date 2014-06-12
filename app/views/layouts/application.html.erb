@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'navigation' %>
   <div class='container'>
-    <%= render 'navigation' %>
+    <!-- <#%= render 'navigation' %> -->
     <%= render 'flash' %>
     <%= yield %>
     
@@ -16,4 +17,5 @@
   </div>
   <%= render 'layouts/ga' if Rails.env.production? %>
 </body>
+
 </html>
