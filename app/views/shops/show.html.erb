@@ -12,7 +12,7 @@
     <div class='row'> <!-- start first row -->
       <div class='col-md-8'>
         <div>
-          <%= image_tag 'clinic_holder.jpg', alt: 'clinic!', class: 'img-thumbnail' %>
+          <%= image_tag @shop.photos.main_only.name.url, alt: 'clinic!', class: 'img-thumbnail' %>
         </div>
       </div>
 
@@ -45,7 +45,7 @@
               <div>
                 <h4>Location</h4>
                 
-                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=14&size=600x300&marker=color:blue%7Clabel:S%7C11211%7C11206%7C11222", alt: 'map!', class: 'img-thumbnail' %>
+                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=14&size=600x300", alt: 'map!', class: 'img-thumbnail' %>
               </div>
             </div> 
 

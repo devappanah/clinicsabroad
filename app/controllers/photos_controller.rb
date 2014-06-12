@@ -30,7 +30,7 @@ class PhotosController < ApplicationController
     @shop = Shop.where(id: params[:shop_id]).first
     @photo = @shop.photos.where(id: params[:id]).first
     if @photo.update_attributes(photo_params)
-      redirect_to @photo
+      redirect_to shop_photos_path(@shop)
     else
       render :edit
     end
@@ -39,6 +39,6 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:name)
+    params.require(:photo).permit(:name, :main)
   end
 end

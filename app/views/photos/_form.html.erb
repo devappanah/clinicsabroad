@@ -1,7 +1,14 @@
 <%= form_for [@shop, @photo], html:{ multipart: true } do |f| %>
 <div class='form-group'>
-  <div><%= f.label :name %></div>
-  <div><%= f.file_field :name, class: 'form-control' %></div>
+  <div>
+    <%= f.label :name %>
+  </div>
+  <div>
+    <%= f.file_field :name, class: 'form-control' %>
+  </div>
+  <div>
+    <%= f.check_box :main, class: 'form-control' %>
+  </div>
 </div>
 <div class='form-group'>
   <%= f.submit "Save Photos", class: 'btn btn-success' %>
