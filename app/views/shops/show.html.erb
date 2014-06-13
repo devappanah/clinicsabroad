@@ -10,9 +10,16 @@
     </p>
 
     <div class='row'> <!-- start first row -->
-      <div class='col-md-8'>
+      <div class='col-md-7'>
         <div>
-          <%= image_tag @shop.photos.main_only.name.url, :width => 600 %>
+          <%= image_tag @shop.photos.main_only.name.url, :width => 500 %>
+        </div>
+      </div>
+
+      <div class='col-md-5'>
+        <div>
+          <h4>Latest Reviews</h4>
+          <%= render @shop.reviews %>
         </div>
       </div>
 
@@ -50,10 +57,6 @@
             </div> 
 
             <div class='col-md-4'>
-              <!-- <div>
-                <h4>Location</h4>
-                <#%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=11&size=200x200&sensor=false", alt: 'map!', class: 'img-thumbnail' %>
-              </div> -->
                 <h4>Hours of Operation</h4>
                   <p><%= simple_format @shop.hours_operation %></p>
 
