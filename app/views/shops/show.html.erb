@@ -10,26 +10,36 @@
     </p>
 
     <div class='row'> <!-- start first row -->
-      <div class='col-md-7'>
+      <div class='col-md-9'>
         <div>
           <%= image_tag @shop.photos.main_only.name.url, :width => 500 %>
         </div>
       </div>
 
-      <div class='col-md-5'>
+<!--       <div class='col-md-5'>
         <div>
           <h4>Latest Reviews</h4>
-          <%= render @shop.reviews %>
+          <#%= render @shop.reviews %>
         </div>
-      </div>
+      </div> -->
 
     </div><!-- end first row -->
+
+  <div class='row'>
+    <div>
+      <h4>Reviews</h4>
+      <%= render @shop.reviews %>
+      <p><h4>Write a review</h4>Sign in or Register to review</p>
+      <%= render 'reviews/new' %>
+    </div>
+  </div>
+
 
   <div class='row'>
     <!-- Nav tabs -->
       <ul class="nav nav-tabs">
         <li class="active"><a href="#home" data-toggle="tab">Key Info</a></li>
-        <li><a href="#reviews" data-toggle="tab">Reviews</a></li>
+        <!-- <li><a href="#reviews" data-toggle="tab">Reviews</a></li> -->
         <li><a href="#services" data-toggle="tab">Services</a></li>
         <li><a href="#gallery" data-toggle="tab">Gallery</a></li>
         <li><a href="#specialists" data-toggle="tab">Specialists</a></li>
@@ -75,14 +85,14 @@
           </div>
         </div>
 
-        <div class="tab-pane" id="reviews">
+        <!-- <div class="tab-pane" id="reviews">
           <div id='reviews'>
             <h4>Reviews</h4>
-              <%= render @shop.reviews %>
+              <#%= render @shop.reviews %>
                 <p><h4>Write a review</h4>Sign in or Register to review</p>
-              <%= render 'reviews/new' %>
+              <#%= render 'reviews/new' %>
           </div>
-        </div>
+        </div> -->
 
         <div class="tab-pane" id="services">
           <div>
