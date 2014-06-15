@@ -5,24 +5,17 @@
       Reviews: <span class='review' data-score='<%= @shop.average_score %>'></span><span>(<%= @shop.reviews.count %>)</span>
     </p>
     <p>
-      Address:  <%=@shop.locations.first.address %>
-      Tel:  <%=@shop.locations.first.tel %>
+      <b>Address:</b>  <%=@shop.locations.first.address %>
+    </p>
+    <p>
+      <b>Tel:</b>  <%=@shop.locations.first.tel %>
+      <b>Website:</b> <%=@shop.locations.first.url %>
     </p>
 
-    <div class='row'> <!-- start first row -->
-      <div class='col-md-9'>
-        <div>
-          <%= image_tag @shop.photos.main_only.name.url, :width => 500 %>
-        </div>
+    <div class='row'> <!-- start first row --> 
+      <div>
+        <%= image_tag @shop.photos.main_only.name.url, :width => 650 %>
       </div>
-
-<!--       <div class='col-md-5'>
-        <div>
-          <h4>Latest Reviews</h4>
-          <#%= render @shop.reviews %>
-        </div>
-      </div> -->
-
     </div><!-- end first row -->
 
   <div class='row'>
@@ -38,8 +31,8 @@
   <div class='row'>
     <!-- Nav tabs -->
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#home" data-toggle="tab">Key Info</a></li>
-        <!-- <li><a href="#reviews" data-toggle="tab">Reviews</a></li> -->
+        <li class="active"><a href="#home" data-toggle="tab">Contact</a></li>
+        <li><a href="#profile" data-toggle="tab">Profile</a></li>
         <li><a href="#services" data-toggle="tab">Services</a></li>
         <li><a href="#gallery" data-toggle="tab">Gallery</a></li>
         <li><a href="#specialists" data-toggle="tab">Specialists</a></li>
@@ -47,8 +40,29 @@
       </ul>
 
     <!-- Tab panes -->
+
       <div class="tab-content">
         <div class="tab-pane active" id="home">
+            <div class='row'>
+              <div class='col-md-8'>
+                <h4>Map</h4>
+                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=14&size=700x400", alt: 'map!', class: 'img-thumbnail' %>
+              </div>
+              <div class='col-md-4'>
+                <p>
+                  <h4>Address</h4>  <%=@shop.locations.first.address %>
+                </p>
+                <p>
+                  <h4>Tel</h4>  <%=@shop.locations.first.tel %>
+                </p>
+                <p>
+                  <h4>Website</h4>  <%=@shop.locations.first.url %>
+                </p>
+              </div>
+          </div>
+        </div>
+
+      <div class="tab-pane" id="profile">
           <div class='row'>
             <div class='col-md-8'>
               <h4>Highlights</h4>
@@ -59,11 +73,11 @@
 
               <h4>Additional Services</h4>
                 <p><%= simple_format @shop.additional_services %></p>
-              <div>
+              <!-- <div>
                 <h4>Location</h4>
                 
-                <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=14&size=600x300", alt: 'map!', class: 'img-thumbnail' %>
-              </div>
+                <#%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@shop.locations.first.lat}, #{@shop.locations.first.lng}&zoom=14&size=600x300", alt: 'map!', class: 'img-thumbnail' %>
+              </div> -->
             </div> 
 
             <div class='col-md-4'>
@@ -81,18 +95,11 @@
 
                 <h4>Years In Business</h4>
                   <p><%= simple_format @shop.years_business %></p>
+              </div>
             </div>
-          </div>
         </div>
 
-        <!-- <div class="tab-pane" id="reviews">
-          <div id='reviews'>
-            <h4>Reviews</h4>
-              <#%= render @shop.reviews %>
-                <p><h4>Write a review</h4>Sign in or Register to review</p>
-              <#%= render 'reviews/new' %>
-          </div>
-        </div> -->
+        
 
         <div class="tab-pane" id="services">
           <div>
@@ -179,9 +186,11 @@
             </div>
           </div>
         </div>
-
-      </div>
+    </div>
   </div>
+  
+    
+
 <% end %><!-- end left column -->
 
 
@@ -197,7 +206,6 @@
       
     </div> <!-- end right column -->
   </div>
-
 </div>
 
 

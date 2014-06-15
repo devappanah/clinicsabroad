@@ -13,7 +13,7 @@
         Reviews: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span>
       </div>
       <div>
-        <% shop.locations.pluck(:city, :address, :tel).uniq.each do |location| %>
+        <% shop.locations.pluck(:city, :address, :tel, :url).uniq.each do |location| %>
         <div>
           <p>City: <%= location[0] %></p>
         </div>
@@ -22,6 +22,9 @@
         </div>
         <div>
           <p>Tel: <%= location[2] %></p>
+        </div>
+        <div>
+          <p>URL: <%= location[3] %></p>
         </div>
         <% end %>
       </div>
