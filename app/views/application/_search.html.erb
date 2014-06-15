@@ -8,7 +8,7 @@
     <%= select_tag :service, options_for_select(Service.distinct_by_name), prompt: "", class: 'form-control chosen-select' %>
   </div>
   <div class='col-md-3'>
-    <h4>Location</h4>
+    <h4>City</h4>
     <%= select_tag :city, options_for_select(Location.distinct_cities), prompt: "", class: 'form-control chosen-select' %>
   </div>
   <div class='col-md-3'>
