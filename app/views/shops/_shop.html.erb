@@ -5,31 +5,31 @@
         <%= image_tag shop.photos.main_only.name.url, :width => 200 %>
       </p>
     </div>
-    <div class='col-md-6'>
+    <div class='col-md-7'>
       <div>
         <h4><%= link_to shop.name, shop_path(shop) %></h4>
       </div>
       <div>
-        Reviews: <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span>
+        <b>Reviews:</b> <span class='review' data-score='<%= shop.average_score %>'></span><span>(<%= shop.reviews.count %>)</span>
       </div>
       <div>
         <% shop.locations.pluck(:city, :address, :tel, :url).uniq.each do |location| %>
         <div>
-          <p>City: <%= location[0] %></p>
+          <p><b>City</b> <%= location[0] %></p>
         </div>
         <div>
-          <p>Address: <%= location[1] %></p>
+          <p><b>Address</b> <%= location[1] %></p>
         </div>
         <div>
-          <p>Tel: <%= location[2] %></p>
+          <p><b>Tel</b> <%= location[2] %></p>
         </div>
         <div>
-          <p>URL: <%= location[3] %></p>
+          <p><b>Website</b> <%= location[3] %></p>
         </div>
         <% end %>
       </div>
     </div>
-    <div class='col-md-3'>
+    <div class='col-md-2'>
       <%= link_to "Select Clinic", shop_path(shop), class: "btn btn-primary btn-block" %>
     </div>
 <% end %>
