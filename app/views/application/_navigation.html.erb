@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <%= activeable_link_to "Home", root_path %>
-        <%= activeable_link_to "All Clinics", shops_path %>
+        <!-- <#%= activeable_link_to "Home", root_path %>
+        <#%= activeable_link_to "All Clinics", shops_path %> -->
         <%= activeable_link_to "New Clinic", new_shop_path if admin_user_signed_in? %>
       </ul>
       <ul id='right-navbar' class='nav navbar-nav navbar-right'>
